@@ -124,6 +124,11 @@ def admin_dashboard():
     return render_template('admin_dashboard.html', user=current_user)
 
 
+# --- Register Blueprints LAST to avoid circular imports ---
+from routes import chat_bp
+app.register_blueprint(chat_bp)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 

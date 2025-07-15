@@ -1,0 +1,97 @@
+/* body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(to right, #546ee1, #5eb5e8); 
+  color: white;
+  text-align: center;
+} */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e2f;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  margin-top: 20px;
+  color: #b13fd4;
+}
+
+a {
+  margin-top: 1rem;
+  color: white;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #dcdcdc;
+}
+
+#chat-box {
+  background-color: #2e2e3e;
+  width: 90%;
+  max-width: 800px;
+  height: 65vh;
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
+}
+
+#chat-box p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+#chat-box p strong {
+  color: #b13fd4;
+}
+
+#chat-form {
+  display: flex;
+  width: 90%;
+  max-width: 800px;
+}
+
+#user-input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  background-color: #3e3e5e;
+  color: #fff;
+  outline: none;
+}
+
+#user-input::placeholder {
+  color: #aaa;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #5cbdf1;
+  color: #1e1e2f;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3492c4;
+}

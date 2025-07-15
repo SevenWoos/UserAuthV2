@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming AI Assistant</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
+</head>
+
+<body>
+  <h1>Greetings {{ user.username }}! I am your personal gaming assistant.</h1>
+
+  <div id="chat-box"></div>
+
+  <form id="chat-form">
+    <input type="text" id="user-input" placeholder="Type your message..." required>
+    <button type="submit">Send</button>
+  </form>
+</body>
+
+<script>
+  const chatBox = document.getElementById('chat-box');
+    const form = document.getElementById('chat-form');
+    const userInput = document.getElementById('user-input');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const message = userInput.value;
+      chatBox.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+      userInput.value = '';
+
+      const response = await fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await response.json();
+      chatBox.innerHTML += `<p><strong>AI:</strong> ${data.response}</p>`;
+    });
+</script>
+</html>
