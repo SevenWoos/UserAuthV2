@@ -12,6 +12,8 @@
 <body>
   <h1>Welcome {{ user.username }}!</h1>
 
+  <a href="{{url_for('chat.chat')}}"> Go to your personal gaming AI!</a>
+
   <a href="{{url_for('logout')}}"> Press here to logout!</a>
 </body>
 </html>

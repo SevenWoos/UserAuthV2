@@ -1,0 +1,34 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Gaming Assistant{% endblock %}</title>
+  
+  <!-- Global styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+
+  <!-- Page-specific styles -->
+  {% block extra_styles %}{% endblock %}
+</head>
+
+<body>
+  {% if show_nav %}
+  <nav class="navbar">
+    <ul>
+      <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+      <li><a href="{{ url_for('chat.chat') }}">Chat AI</a></li>
+      <li><a href="{{ url_for('logout') }}">Logout</a></li>
+    </ul>
+  </nav>
+  {% endif %}
+
+  <div class="content">
+    {% block content %}{% endblock %}
+  </div>
+
+  <!-- Page-specific scripts -->
+  {% block extra_scripts %}{% endblock %}
+</body>
+</html>
